@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.LinearLayout
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.button.MaterialButton
@@ -77,9 +78,13 @@ class ContactsActivity : AppCompatActivity() {
             alertDialog.show()
         }
 
+        val actionBar : ActionBar? = supportActionBar
+        actionBar!!.setDisplayHomeAsUpEnabled(true)
+        actionBar!!.setDisplayShowHomeEnabled(true)
+
         val intent = intent
         val newName = intent.getStringExtra("iCatName")
         val  newCatLogo = intent.getIntExtra("icatLogo", 0)
-        title = newName
+        actionBar.title = newName
     }
 }

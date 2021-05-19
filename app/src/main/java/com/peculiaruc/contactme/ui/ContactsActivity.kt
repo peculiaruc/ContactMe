@@ -76,5 +76,10 @@ class ContactsActivity : AppCompatActivity() {
         binding.fab.setOnClickListener {
             alertDialog.show()
         }
+
+        val intent = intent
+        val newName = intent.getStringExtra("iCatName")
+        val  newCatLogo = intent.getIntExtra("icatLogo", 0)
+        title = newName
     }
 }

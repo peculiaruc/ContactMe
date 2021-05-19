@@ -3,6 +3,7 @@ package com.peculiaruc.contactme.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.peculiaruc.contactme.R
 import com.peculiaruc.contactme.data.Contact
 import com.peculiaruc.contactme.databinding.ListContactItemBinding
 
@@ -30,6 +31,7 @@ class ContactAdapter: RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
         fun bindItem(contact: Contact){
             binding.textName.text = contact.name
             binding.textNumber.text = contact.number
+            //binding.imagePhone.setImageResource(contact.image)
         }
     }
 }

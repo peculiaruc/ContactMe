@@ -1,3 +1,20 @@
 package com.peculiaruc.contactme.db
 
-interface ContactDao
+import androidx.lifecycle.LiveData
+import androidx.room.*
+
+@Dao
+interface ContactDao {
+    @Query("SELECT * FROM contact")
+    fun selectAllContacts(): LiveData<List<ContactEntity>>
+
+    @Insert
+    fun insertContacts(contactEntity: ContactEntity)
+
+    @Delete
+    fun deleteContacts(contactEntity: ContactEntity)
+
+    @Update
+    fun updateContacts(contactEntity: ContactEntity)
+
+}

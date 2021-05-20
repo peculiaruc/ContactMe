@@ -1,5 +1,7 @@
 # ContactMe
+ContactMe App is an app that shows the list of contacts of different categories of people
 
+##Screenshots
 <table>
   <tr>
   <td>

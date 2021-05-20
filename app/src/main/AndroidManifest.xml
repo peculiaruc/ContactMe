@@ -10,14 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ContactMe">
         <activity android:name=".ui.LogInActivity"></activity>
-        <activity android:name=".ui.SignUpActivity" />
-        <activity android:name=".ui.ContactsActivity" />
-        <activity android:name=".ui.CategoryActivity">
+        <activity android:name=".ui.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.ContactsActivity" />
+        <activity android:name=".ui.CategoryActivity">
         </activity>
         <activity android:name=".ui.MainActivity" />
     </application>

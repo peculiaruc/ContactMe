@@ -8,8 +8,8 @@ interface ContactDao {
     @Query("SELECT * FROM contact")
     fun selectAllContacts(): LiveData<List<ContactEntity>>
 
-    @Query("SELECT * FROM contact WHERE contact.email LIKE:email")
-    fun getContactData(email: String): ContactEntity
+    @Query("SELECT * FROM contact WHERE contact.email LIKE:email AND contact.password  LIKE:password")
+    fun getContactData(email: String, password: String): ContactEntity
 
     @Insert
     fun insertContacts(contactEntity: ContactEntity)

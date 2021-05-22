@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(entities = [ContactEntity::class], version = 1)
-abstract class ContactDatabase () {
-    abstract class ContactDatabase: RoomDatabase() {
+abstract class ContactDatabase: RoomDatabase() {
+
         abstract fun contactDao(): ContactDao
 
         companion object {
@@ -19,9 +19,9 @@ abstract class ContactDatabase () {
                 instance ?: buildDatabase(context)
             }
 
-            private fun buildDatabase(context: Context) = Room.databaseBuilder(context, ContactDatabase::class.java, "contact.db").build()
+            private fun buildDatabase(context: Context) = Room.databaseBuilder(context, ContactDatabase::class.java, "contact.database")
+                .allowMainThreadQueries().build()
 
 
         }
     }
-}

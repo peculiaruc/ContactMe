@@ -1,3 +1,3 @@
 package com.peculiaruc.contactme.data
 
-data class Categories(val catimage: Int, val catname: String)
+data class Categories(val contatimage: Int, val contatname: String)

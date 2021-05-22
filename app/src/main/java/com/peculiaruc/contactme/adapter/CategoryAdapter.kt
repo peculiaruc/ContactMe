@@ -38,8 +38,8 @@ class CategoryAdapter:RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>()
             }
             val model = categories[position]
 
-            val catName: String = model.catname
-            val catImage: Int = model.catimage
+            val catName: String = model.contatname
+            val catImage: Int = model.contatimage
 
             val  intent = Intent(holder.itemView.context, ContactsActivity::class.java)
             intent.putExtra("catNAME", catName)
@@ -54,8 +54,8 @@ class CategoryAdapter:RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>()
                                    ListCategoryItemBinding):RecyclerView.ViewHolder(binding.root){
 
         fun  bindItem(category: Categories){
-            binding.imageCat.setImageResource(category.catimage)
-            binding.textCatName.text = category.catname
+            binding.imageCat.setImageResource(category.contatimage)
+            binding.textCatName.text = category.contatname
         }
     }
 

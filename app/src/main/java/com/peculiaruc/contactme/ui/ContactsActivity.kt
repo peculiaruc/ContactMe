@@ -37,6 +37,9 @@ class ContactsActivity : AppCompatActivity() {
     }
 
     private fun setUpAlerDialong(binding: ActivityContactsBinding) {
+        val actionBar : ActionBar? = supportActionBar
+        actionBar!!.setDisplayHomeAsUpEnabled(true)
+        actionBar!!.setDisplayShowHomeEnabled(true)
 
         //create the alerdialog. Infler the layout then Get each item from the layout
         val builder = AlertDialog.Builder(this)
@@ -78,13 +81,9 @@ class ContactsActivity : AppCompatActivity() {
             alertDialog.show()
         }
 
-        val actionBar : ActionBar? = supportActionBar
-        actionBar!!.setDisplayHomeAsUpEnabled(true)
-        actionBar!!.setDisplayShowHomeEnabled(true)
-
         val intent = intent
-        val newName = intent.getStringExtra("iCatName")
-        val  newCatLogo = intent.getIntExtra("icatLogo", 0)
+        val newName = intent.getStringExtra("aContatName")
+        val  newCatLogo = intent.getIntExtra("aContatLogo", 0)
         actionBar.title = newName
     }
 }

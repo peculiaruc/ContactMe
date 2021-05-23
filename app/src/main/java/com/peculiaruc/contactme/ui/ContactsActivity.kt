@@ -85,5 +85,6 @@ class ContactsActivity : AppCompatActivity() {
         val newName = intent.getStringExtra("aContatName")
         val  newCatLogo = intent.getIntExtra("aContatLogo", 0)
         actionBar.title = newName
+        actionBar.subtitle = newCatLogo.toString()
     }
 }

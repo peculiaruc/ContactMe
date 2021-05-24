@@ -19,7 +19,7 @@ class Repository(context: Context) {
            database.contactDao().insertContacts(contactEntity) }  }  }
 
     fun isValidContact(email: String, password: String): Boolean {
-        val validContact: ContactEntity? = database.contactDao().getContactData(email)
+        val validContact: ContactEntity? = database.contactDao().getContactData(email, password)
 
         return  if (validContact != null) {
             validContact.password == password
@@ -28,8 +28,8 @@ class Repository(context: Context) {
         }
     }
 
-    fun isExisting(email: String): Boolean {
-        val existingUser: ContactEntity? = database.contactDao().getContactData(email)
+    fun isExisting(email: String, password: String): Boolean {
+        val existingUser: ContactEntity? = database.contactDao().getContactData(email, password)
 
         return existingUser != null
     }
